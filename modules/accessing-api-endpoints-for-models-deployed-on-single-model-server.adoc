@@ -44,13 +44,13 @@ As indicated by the paths shown, the single model serving platform uses the HTTP
 +
 --
 *Caikit TGIS ServingRuntime for KServe*
-[source,options="nowrap"]
+[source,options="wrap"]
 ----
 curl --json '{"model_id": "<model_name>", "inputs": "At what temperature does water boil?"}' https://<inference_endpoint_url>:443/api/v1/task/server-streaming-text-generation
 ----
 
 *TGIS Standalone ServingRuntime for KServe*
-[source,options="nowrap"]
+[source,options="wrap"]
 ----
 grpcurl -proto text-generation-inference/proto/generation.proto -d '{"requests": [{"text":"At what temperature does water boil?"}]}' -H 'mm-model-id: <model_name>' -insecure <inference_url>:443 fmaas.GenerationService/Generate
 ----
